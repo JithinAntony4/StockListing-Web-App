@@ -51,7 +51,7 @@ export default function SearchStock({setSelectedStockName}) {
             }}
             getOptionSelected={(option, value) => {
                 setSelectedStockName(value.symbol);
-                return option.name === `${option.name} (${option.symbol})`;
+                return option.name === `${value.name} (${value.symbol})`;
             }}
             getOptionLabel={(option) => `${option.name} (${option.symbol})`}
             options={options}
