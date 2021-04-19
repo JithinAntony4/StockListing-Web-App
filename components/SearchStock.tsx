@@ -49,8 +49,13 @@ export default function SearchStock({setSelectedStockName}) {
             onClose={() => {
                 setOpen(false);
             }}
+            onChange={(event, value) => {
+                if (value) {
+                    setSelectedStockName(value.symbol);
+                }
+            }}
             getOptionSelected={(option, value) => {
-                setSelectedStockName(value.symbol);
+                // setSelectedStockName(value.symbol);
                 return option.name === `${value.name} (${value.symbol})`;
             }}
             getOptionLabel={(option) => `${option.name} (${option.symbol})`}
