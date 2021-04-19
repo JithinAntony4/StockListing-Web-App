@@ -41,7 +41,7 @@ export default function TopStocks() {
                                 }} label={value.name} variant="outlined"/>
                             </Grid>)}
                         </>
-                        : <GridSkeleton width={60} height={20} size={6}/>}
+                        : <GridSkeleton width={60} height={20} size={1}/>}
                 </Grid>
             </Paper>
         </Container>
