@@ -7,7 +7,7 @@ import fetch from "cross-fetch";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import {useRouter} from "next/router";
-import GridSkeleton from "./skeletons/GridSkeleton";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 
 export default function TopStocks() {
@@ -41,7 +41,9 @@ export default function TopStocks() {
                                 }} label={value.name} variant="outlined"/>
                             </Grid>)}
                         </>
-                        : <GridSkeleton width={60} height={20} size={1}/>}
+                        : <Container>
+                            <LinearProgress/>
+                        </Container>}
                 </Grid>
             </Paper>
         </Container>

@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {Container, LinearProgress} from "@material-ui/core";
+import {Container} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import theme from "../src/theme";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Currency from 'react-currency-formatter';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 
 export default function ViewStock({selectedStock}) {
@@ -153,7 +154,9 @@ export default function ViewStock({selectedStock}) {
 
                     </Grid>
                     :
-                    <LinearProgress/>
+                    <Grid container>
+                        <CircularProgress/>
+                    </Grid>
                 }
             </Paper>
         </Container>
