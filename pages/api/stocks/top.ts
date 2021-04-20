@@ -22,7 +22,7 @@ type StockError = {
 export default async (req: NextApiRequest, mRes: NextApiResponse<Stock[] | StockError>) => {
     try {
         let selectedStock = req.query.name;
-        let filterBody = {"order": ["price DESC"], "limit": 3}
+        let filterBody = {"order": ["price DESC"], "limit": 10}
         let response = await fetch(`${process.env.SERVER_URL}/stocks?filter=${escape(JSON.stringify(filterBody))}`);
         let resp = await response.json();
         mRes.status(200).json(resp);
